@@ -22,6 +22,8 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
+	void OpenTheDoor();
+
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
@@ -33,4 +35,8 @@ private:
 	
 	UPROPERTY(EditAnywhere)
 	ATriggerVolume* m_pPressurePlate = NULL;
+
+	//3.73 Add a pointer to the actor that opens the door
+	UPROPERTY(EditAnywhere)
+	AActor* m_pActorThatOpens;
 };
