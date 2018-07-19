@@ -10,7 +10,7 @@ UOpenDoor::UOpenDoor()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	// ...
+	// ...	
 }
 
 
@@ -23,7 +23,7 @@ void UOpenDoor::BeginPlay()
 	//Lecture 3.69
 	//Get the door's rotation
 	AActor* pActor = GetOwner();
-	FRotator theRotation = FRotator(0.f, -60.f, 0.f);
+	FRotator theRotation = FRotator(0.f, m_fOpenAngle, 0.f);
 	
 	pActor->SetActorRotation(theRotation);
 

@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+//3.72 for trigger volume
+#include "Classes/Engine/TriggerVolume.h"
 #include "OpenDoor.generated.h"
 
 
@@ -24,6 +26,11 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-		
+private:
+	//Next 2 : 3.72 adding UPROPERTY variables
+	UPROPERTY(VisibleAnywhere)
+	float m_fOpenAngle = 65.f;
 	
+	UPROPERTY(EditAnywhere)
+	ATriggerVolume* m_pPressurePlate = NULL;
 };
