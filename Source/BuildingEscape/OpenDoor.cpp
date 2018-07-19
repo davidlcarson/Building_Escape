@@ -23,6 +23,10 @@ void UOpenDoor::BeginPlay()
 	//3.73 moved open door code out of here to its
 	//..own function, and now will call elsewhere
 
+	//3.74 Find the controller and then init the ActorThatOpens to the Pawn.
+	UWorld* pWorld = GetWorld();
+	APlayerController* pPlayerController = pWorld->GetFirstPlayerController();
+	m_pActorThatOpens = pPlayerController->GetPawn();
 	return;
 }
 
