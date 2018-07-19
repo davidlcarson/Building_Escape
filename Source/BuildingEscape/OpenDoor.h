@@ -23,6 +23,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	void OpenTheDoor();
+	void CloseTheDoor(); //3.76
 
 public:	
 	// Called every frame
@@ -39,4 +40,13 @@ private:
 	//3.73 Add a pointer to the actor that opens the door
 	UPROPERTY(EditAnywhere)
 	AActor* m_pActorThatOpens;
+
+	//3.76 time delay before door closes
+	UPROPERTY(EditAnywhere)
+	float m_DoorCloseDelay = 1.f;
+
+	float  m_LastDoorOpenTime;
+
+	//3.76
+	AActor* m_pActor = nullptr;
 };
